@@ -1,11 +1,10 @@
 .header {
   height: 85vh;
-  background-image: url(/img-imports/AngryUnicorns.jpg);
-  background-size: center;
+  background-image: url(/img-imports/AU-header-blured-edges.png);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  box-shadow: 0 0 5px 10px #555;
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
@@ -13,16 +12,11 @@
     height: 95vh;
   }
 
-  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
-    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-    only screen and (min-width: 125em) {
-    background-image: linear-gradient(to bottom top, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(/img-imports/Village.png);
-  }
-
-  @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-  }
+  // @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+  //   only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+  //   only screen and (min-width: 125em) {
+  //   // background-image: linear-gradient(to bottom top, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(/img-imports/Village.png);
+  // }
 
   &__logo-box {
     position: absolute;
@@ -36,9 +30,22 @@
 
   &__text-box {
     position: absolute;
-    top: 40%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.654);
+    padding: 0 10rem 5rem 10rem;
+    border-radius: 50%;
+
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%);
+  }
+
+  &__text-box a {
+    margin-top: 20px;
+  }
+
+  &__text-box h1 {
+    text-shadow: 1px 5px 6px rgba(0, 0, 0, 1), 1px 5px 11px rgba(0, 0, 0, 1), 1px 5px 15px rgba(0, 0, 0, 1);
   }
 }
